@@ -1,0 +1,118 @@
+{
+  parserClass="ru.tereshkina.plugin.parser.RefalFiveLambdaParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="RefalFiveLambda"
+  psiImplClassSuffix="Impl"
+  psiPackage="ru.tereshkina.plugin.psi"
+  psiImplPackage="ru.tereshkina.plugin.psi.impl"
+
+  elementTypeHolderClass="ru.tereshkina.plugin.psi.RefalFiveLambdaTypes"
+  elementTypeClass="ru.tereshkina.plugin.psi.RefalFiveLambdaElementType"
+  tokenTypeClass="ru.tereshkina.plugin.psi.RefalFiveLambdaTokenType"
+}
+
+Program ::= ProgramElement*
+ProgramElement ::=
+    IncludeDec
+  | externalDeclaration
+  | enumDefinition
+  | swapDefinition
+  | forwardDeclaration
+ // | ForceEntry
+  | SimpleFunction
+ // | Comment
+  | NativeIns
+  |KeywordFunction
+ // | Comment
+  | SEMICOLON
+
+
+IncludeDec ::= INCLUDE COMPOUND SEMICOLON
+externalDeclaration ::= (EXTERN | EXTRN | EXTERNALL ) NameList
+forwardDeclaration ::= FORWARD NameList
+//ExternKeyword ::= EXTERN | EXTRN | EXTERNALL
+enumDefinition ::= (ENUM | EENUM) NameList
+swapDefinition ::= (SWAP | ESWAP) NameList
+//ForceEntry ::= ENTRY NameList
+NameList ::= NAME (COMMA NAME)* SEMICOLON
+Comment ::= //CPP_INLINE
+             MULTILINE_COMMENT
+           // | END_OF_LINE_COMMENT
+            | LINE_COMMENT
+KeywordFunction ::= (ENTRY | INLINE | DRIVE )? FuncName (Block | (COMMA FuncName)* SEMICOLON)
+SimpleFunction ::= FuncName Block
+//Function ::= (ENTRY | INLINE | SPEC )? FuncName Block
+//Block ::= LBRACE Sentences? RBRACE
+Sentences ::=  (Sentence   (SEMICOLON  Sentence)* (SEMICOLON )?) | NativeIns
+
+Block ::= LBRACE Sentences RBRACE
+NativeIns ::= NATIVE_IN
+Sentence ::= sentenceCorrect | sentenceRecover
+private sentenceCorrect ::= Pattern ConditionAssignment* ( EQUAL ResultEx | COMMA ResultEx COLON Block )
+private sentenceRecover ::= patternRecover
+patternRecover ::= PatternTerm+
+ConditionAssignment ::=  ConditionInCorrect | AssignmentInCorrect
+ConditionCorrect ::= COMMA ResultEx COLON Pattern
+AssignmentCorrect ::= EQUAL ResultEx COLON Pattern
+ConditionInCorrect ::= COMMA ResultEx SHARP Pattern
+AssignmentInCorrect ::= EQUAL ResultEx SHARP Pattern
+ResultEx ::= Result (COLON Block)*
+
+
+//grammarkit как добавлять востановление после ошибок
+
+Pattern ::= PatternTerm*
+PatternTerm ::=
+    Atom
+    | patternTermParens
+    | patternTermBrackets
+    | RedefinitionVariable
+    //добавлено
+    | AssignmentCorrect
+    | ConditionCorrect
+
+
+private patternTermParens ::= LPAREN Pattern RPAREN
+private patternTermBrackets ::= LBRACKET NAME Pattern RPAREN    //разве не идентификатор вместо нэйма
+Result ::= ResultTerm*
+ResultTerm ::=
+    Atom
+    | ParenResultTerm
+    | BracketResultTerm
+    | SugerCall Result RCHEVRON
+    | ChevronResultTerm
+    | Block
+    | Var
+
+Var ::= VARIABLE        //для дополнения подсказки:)
+RedefinitionVariable ::= Var (CaretDef)?
+CaretDef ::= CARET
+private ParenResultTerm ::= LPAREN Result RPAREN
+private ChevronResultTerm ::= LCHEVRON Callee Result RCHEVRON
+private BracketResultTerm ::= LBRACKET FuncName Result RBRACKET         //исправлено
+Callee ::= FuncName
+    | FuncPtr
+    | Var
+    | ChevronResultTerm
+    | Block
+
+SugerCall ::=
+     ADD
+    | SUB
+    | MUL
+    | DIV
+    | MOD
+    | RESIDUE
+Atom ::=
+    QUOTEDSTRING
+    | COMPOUND
+    | INTEGER_LITERAL
+    | Identifier
+    | FuncPtr
+
+
+Identifier ::= NAME
+FuncPtr ::= AMPERSAND FuncName
+FuncName ::= NAME
