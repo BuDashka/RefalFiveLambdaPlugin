@@ -185,16 +185,33 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // LBRACE Sentences RBRACE
+  // LBRACE (Sentences)? RBRACE
   public static boolean Block(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Block")) return false;
     if (!nextTokenIs(b, LBRACE)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, LBRACE);
-    r = r && Sentences(b, l + 1);
+    r = r && Block_1(b, l + 1);
     r = r && consumeToken(b, RBRACE);
     exit_section_(b, m, BLOCK, r);
+    return r;
+  }
+
+  // (Sentences)?
+  private static boolean Block_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "Block_1")) return false;
+    Block_1_0(b, l + 1);
+    return true;
+  }
+
+  // (Sentences)
+  private static boolean Block_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "Block_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = Sentences(b, l + 1);
+    exit_section_(b, m, null, r);
     return r;
   }
 
@@ -891,7 +908,7 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // LBRACKET NAME Pattern RPAREN
+  // LBRACKET NAME Pattern RBRACKET
   static boolean patternTermBrackets(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "patternTermBrackets")) return false;
     if (!nextTokenIs(b, LBRACKET)) return false;
@@ -899,7 +916,7 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, LBRACKET, NAME);
     r = r && Pattern(b, l + 1);
-    r = r && consumeToken(b, RPAREN);
+    r = r && consumeToken(b, RBRACKET);
     exit_section_(b, m, null, r);
     return r;
   }
@@ -919,7 +936,7 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // Pattern ConditionAssignment* ( EQUAL ResultEx | COMMA ResultEx COLON Block )
+  // Pattern ConditionAssignment* ( EQUAL ResultEx | COMMA ResultEx )
   static boolean sentenceCorrect(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sentenceCorrect")) return false;
     boolean r;
@@ -943,7 +960,7 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
     return true;
   }
 
-  // EQUAL ResultEx | COMMA ResultEx COLON Block
+  // EQUAL ResultEx | COMMA ResultEx
   private static boolean sentenceCorrect_2(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sentenceCorrect_2")) return false;
     boolean r;
@@ -965,15 +982,13 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // COMMA ResultEx COLON Block
+  // COMMA ResultEx
   private static boolean sentenceCorrect_2_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sentenceCorrect_2_1")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, COMMA);
     r = r && ResultEx(b, l + 1);
-    r = r && consumeToken(b, COLON);
-    r = r && Block(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }

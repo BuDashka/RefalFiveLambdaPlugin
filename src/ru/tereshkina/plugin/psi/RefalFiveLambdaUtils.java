@@ -258,6 +258,7 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("Lower");
         lFunctionNames.add("Mod");
         lFunctionNames.add("Mul");
+        lFunctionNames.add("Mu");
         lFunctionNames.add("Numb");
         lFunctionNames.add("Open");
         lFunctionNames.add("Ord");

@@ -7,9 +7,6 @@ import com.intellij.psi.PsiElement;
 
 public interface RefalFiveLambdaSentence extends PsiElement {
 
-  @Nullable
-  RefalFiveLambdaBlock getBlock();
-
   @NotNull
   List<RefalFiveLambdaConditionAssignment> getConditionAssignmentList();
 

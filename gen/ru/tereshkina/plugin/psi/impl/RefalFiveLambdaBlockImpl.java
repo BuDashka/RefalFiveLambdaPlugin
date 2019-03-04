@@ -27,9 +27,9 @@ public class RefalFiveLambdaBlockImpl extends ASTWrapperPsiElement implements Re
   }
 
   @Override
-  @NotNull
+  @Nullable
   public RefalFiveLambdaSentences getSentences() {
-    return findNotNullChildByClass(RefalFiveLambdaSentences.class);
+    return findChildByClass(RefalFiveLambdaSentences.class);
   }
 
 }

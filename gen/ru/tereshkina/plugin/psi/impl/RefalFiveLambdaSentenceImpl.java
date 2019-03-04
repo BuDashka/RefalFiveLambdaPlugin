@@ -27,12 +27,6 @@ public class RefalFiveLambdaSentenceImpl extends ASTWrapperPsiElement implements
   }
 
   @Override
-  @Nullable
-  public RefalFiveLambdaBlock getBlock() {
-    return findChildByClass(RefalFiveLambdaBlock.class);
-  }
-
-  @Override
   @NotNull
   public List<RefalFiveLambdaConditionAssignment> getConditionAssignmentList() {
     return PsiTreeUtil.getChildrenOfTypeAsList(this, RefalFiveLambdaConditionAssignment.class);

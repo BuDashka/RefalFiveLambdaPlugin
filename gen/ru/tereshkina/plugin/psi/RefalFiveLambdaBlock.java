@@ -7,7 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface RefalFiveLambdaBlock extends PsiElement {
 
-  @NotNull
+  @Nullable
   RefalFiveLambdaSentences getSentences();
 
 }

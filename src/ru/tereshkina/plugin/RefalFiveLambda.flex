@@ -28,9 +28,12 @@ LINE_COMMENT = "*"[^\r\n]*
 
 CPP_INLINE = "%%"\n(([^%\n].*|%|%[^%\n].*)?\n)*%%
 
+//STRING_LITERAL=\'([^\\\'\r\n]|{ESCAPE_SEQUENCE})*\'
+//CHAR_LETERAL = \"([^\\\'\r\n]|{ESCAPE_SEQUENCE})*\"
+//ESCAPE_SEQUENCE=\\[^\r\n\t\\\"\'\<\>\(\)]
 STRING_LITERAL=\'([^\\\'\r\n]|{ESCAPE_SEQUENCE})*\'
-CHAR_LETERAL = \"([^\\\'\r\n]|{ESCAPE_SEQUENCE})*\"
-ESCAPE_SEQUENCE=\\[^\r\n\t\\\"\'\<\>\(\)]
+CHAR_LETERAL = \"([^\\\"\r\n]|{ESCAPE_SEQUENCE})*\"
+ESCAPE_SEQUENCE=\\([rnt\\\"\'\<\>\(\)]|x[0-9a-fA-F][0-9a-fA-F])
 
 
 DIGIT=[0-9]
