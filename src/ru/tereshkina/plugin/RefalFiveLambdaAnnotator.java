@@ -22,13 +22,14 @@ public class RefalFiveLambdaAnnotator implements Annotator {
             if (!isPatternVariable && !isInPotentialVariables) {
                 annotationHolder.createErrorAnnotation(RefalFiveLambdaUtils.getTextRange(psiElement), "Unresolved variable");
             }
-            if (isPatternVariable && isInPotentialVariables) {
-                boolean isRedefinitionVariable = RefalFiveLambdaUtils.isRedefinitonVariable(psiElement);
-                if (!isRedefinitionVariable) {
-                    annotationHolder.createWeakWarningAnnotation(RefalFiveLambdaUtils.getTextRange(psiElement),
-                            "Variable is already defined");
-                }
-            }
+            /* TODO: разобраться с этой ситуацией */
+            //if (isPatternVariable && isInPotentialVariables) {
+            //    boolean isRedefinitionVariable = RefalFiveLambdaUtils.isRedefinitonVariable(psiElement);
+            //    if (!isRedefinitionVariable) {
+            //        annotationHolder.createWeakWarningAnnotation(RefalFiveLambdaUtils.getTextRange(psiElement),
+            //                "Variable is already defined");
+            //    }
+            //}
 
         }
 
