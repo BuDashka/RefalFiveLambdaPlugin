@@ -300,6 +300,13 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("Inc");
         lFunctionNames.add("Max");
 
+        lFunctionNames.add("Freeze");
+        lFunctionNames.add("Freezer");
+        lFunctionNames.add("Dn");
+        lFunctionNames.add("Up");
+        lFunctionNames.add("Ev-met");
+        lFunctionNames.add("XMLParse");
+
 
         while (!top.toString().equals("RefalFiveLambdaProgramElementImpl(PROGRAM_ELEMENT)")) {
             top = top.getParent();
