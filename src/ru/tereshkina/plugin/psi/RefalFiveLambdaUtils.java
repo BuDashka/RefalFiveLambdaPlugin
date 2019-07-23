@@ -306,10 +306,38 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("GetPPID");
 
 
+        // Функции библиотеки LibraryEx
+        lFunctionNames.add("Apply");
         lFunctionNames.add("Map");
+        lFunctionNames.add("Reduce");
+        lFunctionNames.add("Fetch");
+        lFunctionNames.add("MapAccum");
         lFunctionNames.add("MapReduce");
+        lFunctionNames.add("UnBracket");
+        lFunctionNames.add("DelAccumulator");
         lFunctionNames.add("Inc");
+        lFunctionNames.add("Dec");
+        lFunctionNames.add("Pipe");
+        lFunctionNames.add("Seq");
+        lFunctionNames.add("Y");
+        lFunctionNames.add("FastIntFromStr");
+        lFunctionNames.add("LoadFile");
+        lFunctionNames.add("SaveFile");
+        lFunctionNames.add("AppendFile");
+        lFunctionNames.add("LoadBytes");
+        lFunctionNames.add("SaveBytes");
+        lFunctionNames.add("AppendBytes");
+        lFunctionNames.add("ArgList");
+        lFunctionNames.add("TermCompare");
+        lFunctionNames.add("TermCompare-T");
+        lFunctionNames.add("Trim");
+        lFunctionNames.add("Trim-L");
+        lFunctionNames.add("Trim-R");
+        lFunctionNames.add("Sort");
+        lFunctionNames.add("Min");
         lFunctionNames.add("Max");
+        lFunctionNames.add("OneOf");
+        lFunctionNames.add("Unique");
 
 
         while (!top.toString().equals("RefalFiveLambdaProgramElementImpl(PROGRAM_ELEMENT)")) {
