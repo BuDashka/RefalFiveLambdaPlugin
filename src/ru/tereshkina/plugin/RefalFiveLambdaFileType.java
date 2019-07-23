@@ -17,13 +17,13 @@ public class RefalFiveLambdaFileType extends LanguageFileType {
     @NotNull
     @Override
     public String getName() {
-        return "Refal-5\u03bb";
+        return "Refal Five Lambda";
     }
 
     @NotNull
     @Override
     public String getDescription() {
-        return "Refal-5\u03bb file";
+        return "Refal-5\u03BB";
     }
 
     @NotNull
