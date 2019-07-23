@@ -1,6 +1,6 @@
 <idea-plugin version="2">
-  <id>ru.tereshkina.plugin.RefalFiveambda</id>
-  <name>Plugin Refal 5 Lambda</name>
+  <id>ru.tereshkina.plugin.RefalFiveLambda</id>
+  <name>Plugin Refal-5λ</name>
   <version>1.0.3</version>
   <description>Plugin Refal 5 Lambda </description>
 
