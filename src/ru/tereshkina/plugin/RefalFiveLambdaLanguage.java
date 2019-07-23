@@ -6,7 +6,7 @@ public class RefalFiveLambdaLanguage extends Language {
     public static final Language INSTANCE = new RefalFiveLambdaLanguage();
 
     private RefalFiveLambdaLanguage() {
-        super("Refal Five Lambda");
+        super("Refal-5\u03bb");
     }
 
 }
