@@ -239,11 +239,14 @@ public class RefalFiveLambdaUtils {
         PsiElement top = parameters;
 
         List<String> lFunctionNames = new ArrayList<>();
+
+        // Встроенные функции
+        lFunctionNames.add("Mu");
         lFunctionNames.add("Add");
         lFunctionNames.add("Arg");
         lFunctionNames.add("Br");
-        lFunctionNames.add("Chr");
         lFunctionNames.add("Card");
+        lFunctionNames.add("Chr");
         lFunctionNames.add("Cp");
         lFunctionNames.add("Dg");
         lFunctionNames.add("Dgall");
@@ -258,12 +261,13 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("Lower");
         lFunctionNames.add("Mod");
         lFunctionNames.add("Mul");
-        lFunctionNames.add("Mu");
         lFunctionNames.add("Numb");
         lFunctionNames.add("Open");
         lFunctionNames.add("Ord");
         lFunctionNames.add("Print");
         lFunctionNames.add("Prout");
+        lFunctionNames.add("Proud");  // пасхалка
+        lFunctionNames.add("Trout");  // пасхалка
         lFunctionNames.add("Put");
         lFunctionNames.add("Putout");
         lFunctionNames.add("Rp");
@@ -274,8 +278,14 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("Type");
         lFunctionNames.add("Upper");
         lFunctionNames.add("Sysfun");
+        lFunctionNames.add("Freeze");
+        lFunctionNames.add("Freezer");
+        lFunctionNames.add("Dn");
+        lFunctionNames.add("Up");
+        lFunctionNames.add("Ev-met");
         lFunctionNames.add("Resudue");
         lFunctionNames.add("GetEnv");
+        lFunctionNames.add("System");
         lFunctionNames.add("Exit");
         lFunctionNames.add("Close");
         lFunctionNames.add("ExistFile");
@@ -286,6 +296,7 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("TimeElapsed");
         lFunctionNames.add("Compare");
         lFunctionNames.add("DeSysfun");
+        lFunctionNames.add("XMLParse");
         lFunctionNames.add("Random");
         lFunctionNames.add("RandomDigit");
         lFunctionNames.add("Write");
