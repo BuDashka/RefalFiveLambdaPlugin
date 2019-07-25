@@ -13,7 +13,8 @@ public class RefalFiveLambdaBraceMatcher implements PairedBraceMatcher {
             new BracePair(RefalFiveLambdaTypes.LBRACE, RefalFiveLambdaTypes.RBRACE, true),
             new BracePair(RefalFiveLambdaTypes.LCHEVRON, RefalFiveLambdaTypes.RCHEVRON, true),
             new BracePair(RefalFiveLambdaTypes.LBRACKET, RefalFiveLambdaTypes.RBRACKET, true),
-            new BracePair(RefalFiveLambdaTypes.LPAREN, RefalFiveLambdaTypes.RPAREN, true)
+            new BracePair(RefalFiveLambdaTypes.LPAREN, RefalFiveLambdaTypes.RPAREN, true),
+            new BracePair(RefalFiveLambdaTypes.LCHEVRON, RefalFiveLambdaTypes.RCHEVRON, true)
 
     };
     @Override
