@@ -52,6 +52,12 @@ public class RefalFiveLambdaProgramElementImpl extends ASTWrapperPsiElement impl
 
   @Override
   @Nullable
+  public RefalFiveLambdaSpecDirective getSpecDirective() {
+    return findChildByClass(RefalFiveLambdaSpecDirective.class);
+  }
+
+  @Override
+  @Nullable
   public RefalFiveLambdaEnumDefinition getEnumDefinition() {
     return findChildByClass(RefalFiveLambdaEnumDefinition.class);
   }

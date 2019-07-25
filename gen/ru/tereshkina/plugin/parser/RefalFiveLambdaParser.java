@@ -479,6 +479,7 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   //  // | Comment
   //   | NativeIns
   //   |KeywordFunction
+  //   | SpecDirective
   //  // | Comment
   //   | SEMICOLON
   public static boolean ProgramElement(PsiBuilder b, int l) {
@@ -493,6 +494,7 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
     if (!r) r = SimpleFunction(b, l + 1);
     if (!r) r = NativeIns(b, l + 1);
     if (!r) r = KeywordFunction(b, l + 1);
+    if (!r) r = SpecDirective(b, l + 1);
     if (!r) r = consumeToken(b, SEMICOLON);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -686,6 +688,20 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
     r = FuncName(b, l + 1);
     r = r && Block(b, l + 1);
     exit_section_(b, m, SIMPLE_FUNCTION, r);
+    return r;
+  }
+
+  /* ********************************************************** */
+  // SPEC FuncName Pattern
+  public static boolean SpecDirective(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SpecDirective")) return false;
+    if (!nextTokenIs(b, SPEC)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, SPEC);
+    r = r && FuncName(b, l + 1);
+    r = r && Pattern(b, l + 1);
+    exit_section_(b, m, SPEC_DIRECTIVE, r);
     return r;
   }
 

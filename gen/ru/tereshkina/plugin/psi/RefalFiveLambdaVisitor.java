@@ -115,6 +115,10 @@ public class RefalFiveLambdaVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitSpecDirective(@NotNull RefalFiveLambdaSpecDirective o) {
+    visitPsiElement(o);
+  }
+
   public void visitSugerCall(@NotNull RefalFiveLambdaSugerCall o) {
     visitPsiElement(o);
   }

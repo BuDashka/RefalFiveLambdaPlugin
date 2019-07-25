@@ -39,6 +39,7 @@ public interface RefalFiveLambdaTypes {
   IElementType SENTENCE = new RefalFiveLambdaElementType("SENTENCE");
   IElementType SENTENCES = new RefalFiveLambdaElementType("SENTENCES");
   IElementType SIMPLE_FUNCTION = new RefalFiveLambdaElementType("SIMPLE_FUNCTION");
+  IElementType SPEC_DIRECTIVE = new RefalFiveLambdaElementType("SPEC_DIRECTIVE");
   IElementType SUGER_CALL = new RefalFiveLambdaElementType("SUGER_CALL");
   IElementType SWAP_DEFINITION = new RefalFiveLambdaElementType("SWAP_DEFINITION");
   IElementType VAR = new RefalFiveLambdaElementType("VAR");
@@ -81,6 +82,7 @@ public interface RefalFiveLambdaTypes {
   IElementType RPAREN = new RefalFiveLambdaTokenType("RPAREN");
   IElementType SEMICOLON = new RefalFiveLambdaTokenType("SEMICOLON");
   IElementType SHARP = new RefalFiveLambdaTokenType("SHARP");
+  IElementType SPEC = new RefalFiveLambdaTokenType("SPEC");
   IElementType SUB = new RefalFiveLambdaTokenType("SUB");
   IElementType SWAP = new RefalFiveLambdaTokenType("SWAP");
   IElementType VARIABLE = new RefalFiveLambdaTokenType("VARIABLE");
@@ -180,6 +182,9 @@ public interface RefalFiveLambdaTypes {
       }
       else if (type == SIMPLE_FUNCTION) {
         return new RefalFiveLambdaSimpleFunctionImpl(node);
+      }
+      else if (type == SPEC_DIRECTIVE) {
+        return new RefalFiveLambdaSpecDirectiveImpl(node);
       }
       else if (type == SUGER_CALL) {
         return new RefalFiveLambdaSugerCallImpl(node);
