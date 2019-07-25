@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaFuncPtrImpl extends ASTWrapperPsiElement implements RefalFiveLambdaFuncPtr {
 
-  public RefalFiveLambdaFuncPtrImpl(ASTNode node) {
+  public RefalFiveLambdaFuncPtrImpl(@NotNull ASTNode node) {
     super(node);
   }
 

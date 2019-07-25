@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaIncludeDecImpl extends ASTWrapperPsiElement implements RefalFiveLambdaIncludeDec {
 
-  public RefalFiveLambdaIncludeDecImpl(ASTNode node) {
+  public RefalFiveLambdaIncludeDecImpl(@NotNull ASTNode node) {
     super(node);
   }
 

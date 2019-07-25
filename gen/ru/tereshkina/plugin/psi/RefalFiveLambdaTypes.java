@@ -88,7 +88,7 @@ public interface RefalFiveLambdaTypes {
   class Factory {
     public static PsiElement createElement(ASTNode node) {
       IElementType type = node.getElementType();
-       if (type == ASSIGNMENT_CORRECT) {
+      if (type == ASSIGNMENT_CORRECT) {
         return new RefalFiveLambdaAssignmentCorrectImpl(node);
       }
       else if (type == ASSIGNMENT_IN_CORRECT) {

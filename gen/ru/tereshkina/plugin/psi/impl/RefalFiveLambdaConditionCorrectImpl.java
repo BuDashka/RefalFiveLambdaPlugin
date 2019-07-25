@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaConditionCorrectImpl extends ASTWrapperPsiElement implements RefalFiveLambdaConditionCorrect {
 
-  public RefalFiveLambdaConditionCorrectImpl(ASTNode node) {
+  public RefalFiveLambdaConditionCorrectImpl(@NotNull ASTNode node) {
     super(node);
   }
 

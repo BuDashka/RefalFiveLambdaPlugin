@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaPatternRecoverImpl extends ASTWrapperPsiElement implements RefalFiveLambdaPatternRecover {
 
-  public RefalFiveLambdaPatternRecoverImpl(ASTNode node) {
+  public RefalFiveLambdaPatternRecoverImpl(@NotNull ASTNode node) {
     super(node);
   }
 

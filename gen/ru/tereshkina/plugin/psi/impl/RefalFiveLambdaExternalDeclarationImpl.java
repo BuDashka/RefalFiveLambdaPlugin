@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaExternalDeclarationImpl extends ASTWrapperPsiElement implements RefalFiveLambdaExternalDeclaration {
 
-  public RefalFiveLambdaExternalDeclarationImpl(ASTNode node) {
+  public RefalFiveLambdaExternalDeclarationImpl(@NotNull ASTNode node) {
     super(node);
   }
 

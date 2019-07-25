@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaEnumDefinitionImpl extends ASTWrapperPsiElement implements RefalFiveLambdaEnumDefinition {
 
-  public RefalFiveLambdaEnumDefinitionImpl(ASTNode node) {
+  public RefalFiveLambdaEnumDefinitionImpl(@NotNull ASTNode node) {
     super(node);
   }
 
