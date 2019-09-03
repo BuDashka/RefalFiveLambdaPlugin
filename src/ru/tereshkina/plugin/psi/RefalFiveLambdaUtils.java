@@ -289,7 +289,7 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("Exit");
         lFunctionNames.add("Close");
         lFunctionNames.add("ExistFile");
-        lFunctionNames.add("GetCurrentDirrectory");
+        lFunctionNames.add("GetCurrentDirectory");
         lFunctionNames.add("RemoveFile");
         lFunctionNames.add("Implode_Ext");
         lFunctionNames.add("Explode_Ext");
