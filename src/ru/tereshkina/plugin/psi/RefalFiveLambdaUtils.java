@@ -239,11 +239,14 @@ public class RefalFiveLambdaUtils {
         PsiElement top = parameters;
 
         List<String> lFunctionNames = new ArrayList<>();
+
+        // Встроенные функции
+        lFunctionNames.add("Mu");
         lFunctionNames.add("Add");
         lFunctionNames.add("Arg");
         lFunctionNames.add("Br");
-        lFunctionNames.add("Chr");
         lFunctionNames.add("Card");
+        lFunctionNames.add("Chr");
         lFunctionNames.add("Cp");
         lFunctionNames.add("Dg");
         lFunctionNames.add("Dgall");
@@ -258,12 +261,13 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("Lower");
         lFunctionNames.add("Mod");
         lFunctionNames.add("Mul");
-        lFunctionNames.add("Mu");
         lFunctionNames.add("Numb");
         lFunctionNames.add("Open");
         lFunctionNames.add("Ord");
         lFunctionNames.add("Print");
         lFunctionNames.add("Prout");
+        lFunctionNames.add("Proud");  // пасхалка
+        lFunctionNames.add("Trout");  // пасхалка
         lFunctionNames.add("Put");
         lFunctionNames.add("Putout");
         lFunctionNames.add("Rp");
@@ -274,18 +278,25 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("Type");
         lFunctionNames.add("Upper");
         lFunctionNames.add("Sysfun");
+        lFunctionNames.add("Freeze");
+        lFunctionNames.add("Freezer");
+        lFunctionNames.add("Dn");
+        lFunctionNames.add("Up");
+        lFunctionNames.add("Ev-met");
         lFunctionNames.add("Resudue");
         lFunctionNames.add("GetEnv");
+        lFunctionNames.add("System");
         lFunctionNames.add("Exit");
         lFunctionNames.add("Close");
         lFunctionNames.add("ExistFile");
-        lFunctionNames.add("GetCurrentDirrectory");
+        lFunctionNames.add("GetCurrentDirectory");
         lFunctionNames.add("RemoveFile");
         lFunctionNames.add("Implode_Ext");
         lFunctionNames.add("Explode_Ext");
         lFunctionNames.add("TimeElapsed");
         lFunctionNames.add("Compare");
         lFunctionNames.add("DeSysfun");
+        lFunctionNames.add("XMLParse");
         lFunctionNames.add("Random");
         lFunctionNames.add("RandomDigit");
         lFunctionNames.add("Write");
@@ -295,17 +306,38 @@ public class RefalFiveLambdaUtils {
         lFunctionNames.add("GetPPID");
 
 
+        // Функции библиотеки LibraryEx
+        lFunctionNames.add("Apply");
         lFunctionNames.add("Map");
+        lFunctionNames.add("Reduce");
+        lFunctionNames.add("Fetch");
+        lFunctionNames.add("MapAccum");
         lFunctionNames.add("MapReduce");
+        lFunctionNames.add("UnBracket");
+        lFunctionNames.add("DelAccumulator");
         lFunctionNames.add("Inc");
+        lFunctionNames.add("Dec");
+        lFunctionNames.add("Pipe");
+        lFunctionNames.add("Seq");
+        lFunctionNames.add("Y");
+        lFunctionNames.add("FastIntFromStr");
+        lFunctionNames.add("LoadFile");
+        lFunctionNames.add("SaveFile");
+        lFunctionNames.add("AppendFile");
+        lFunctionNames.add("LoadBytes");
+        lFunctionNames.add("SaveBytes");
+        lFunctionNames.add("AppendBytes");
+        lFunctionNames.add("ArgList");
+        lFunctionNames.add("TermCompare");
+        lFunctionNames.add("TermCompare-T");
+        lFunctionNames.add("Trim");
+        lFunctionNames.add("Trim-L");
+        lFunctionNames.add("Trim-R");
+        lFunctionNames.add("Sort");
+        lFunctionNames.add("Min");
         lFunctionNames.add("Max");
-
-        lFunctionNames.add("Freeze");
-        lFunctionNames.add("Freezer");
-        lFunctionNames.add("Dn");
-        lFunctionNames.add("Up");
-        lFunctionNames.add("Ev-met");
-        lFunctionNames.add("XMLParse");
+        lFunctionNames.add("OneOf");
+        lFunctionNames.add("Unique");
 
 
         while (!top.toString().equals("RefalFiveLambdaProgramElementImpl(PROGRAM_ELEMENT)")) {

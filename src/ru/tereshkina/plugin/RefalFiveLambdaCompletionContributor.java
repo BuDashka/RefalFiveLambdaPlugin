@@ -3,11 +3,15 @@ package ru.tereshkina.plugin;
 import com.intellij.codeInsight.completion.*;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
 import com.intellij.patterns.PlatformPatterns;
+import com.intellij.psi.PsiElement;
 import com.intellij.util.ProcessingContext;
 import org.apache.commons.lang.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
 import ru.tereshkina.plugin.psi.RefalFiveLambdaTypes;
 import ru.tereshkina.plugin.psi.RefalFiveLambdaUtils;
+import ru.tereshkina.plugin.psi.impl.RefalFiveLambdaCalleeImpl;
+import ru.tereshkina.plugin.psi.impl.RefalFiveLambdaFuncPtrImpl;
+import ru.tereshkina.plugin.psi.impl.RefalFiveLambdaResultTermImpl;
 
 import java.util.Collections;
 
@@ -41,23 +45,18 @@ public class RefalFiveLambdaCompletionContributor extends CompletionContributor 
                     public void addCompletions(@NotNull CompletionParameters parameters,
                                                ProcessingContext context,
                                                @NotNull CompletionResultSet resultSet) {
-        //                System.out.println("addCompletions");
-          //              System.out.println("0:" + parameters.getPosition().toString());
-            //            System.out.println("0:" + parameters.getPosition().getParent().toString());
-              //          System.out.println("0:" + parameters.getPosition().getParent().getParent().toString());
-                        if (parameters.getPosition().getParent().getParent().
-                                        toString().equals("RefalFiveLambdaFuncPtrImpl(FUNC_PTR)") ||
-                                parameters.getPosition().getParent().getParent().
-                                toString().equals("RefalFiveLambdaResultTermImpl(RESULT_TERM)") ||
-                                parameters.getPosition().getParent().getParent().
-                                        toString().equals("RefalFiveLambdaCalleeImpl(CALLEE)"))
-                        {
-                //            System.out.println("1:" + parameters.getPosition().toString());
+                        PsiElement elem = parameters.getPosition().getParent();
+                        PsiElement parent = null;
+                        if (elem != null) {
+                            parent = elem.getParent();
+                        }
+                        if (parent instanceof RefalFiveLambdaFuncPtrImpl
+                                || parent instanceof RefalFiveLambdaResultTermImpl
+                                || parent instanceof RefalFiveLambdaCalleeImpl) {
                             String[] functionNames = RefalFiveLambdaUtils.getAvailableFunctionNames(parameters.getPosition());
                             for (String functionName : functionNames) {
                                 resultSet.addElement(LookupElementBuilder.create(functionName));
                             }
-                  //          System.out.println("3:" + parameters.getPosition().toString());
                         }
                     }
                 }

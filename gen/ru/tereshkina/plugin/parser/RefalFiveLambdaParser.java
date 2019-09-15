@@ -6,6 +6,7 @@ import com.intellij.lang.PsiBuilder.Marker;
 import static ru.tereshkina.plugin.psi.RefalFiveLambdaTypes.*;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
 import com.intellij.psi.tree.IElementType;
+import com.intellij.psi.tree.IFileElementType;
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.tree.TokenSet;
 import com.intellij.lang.PsiParser;
@@ -23,110 +24,11 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
     boolean r;
     b = adapt_builder_(t, b, this, null);
     Marker m = enter_section_(b, 0, _COLLAPSE_, null);
-    if (t == ASSIGNMENT_CORRECT) {
-      r = AssignmentCorrect(b, 0);
-    }
-    else if (t == ASSIGNMENT_IN_CORRECT) {
-      r = AssignmentInCorrect(b, 0);
-    }
-    else if (t == ATOM) {
-      r = Atom(b, 0);
-    }
-    else if (t == BLOCK) {
-      r = Block(b, 0);
-    }
-    else if (t == CALLEE) {
-      r = Callee(b, 0);
-    }
-    else if (t == CARET_DEF) {
-      r = CaretDef(b, 0);
-    }
-    else if (t == COMMENT) {
-      r = Comment(b, 0);
-    }
-    else if (t == CONDITION_ASSIGNMENT) {
-      r = ConditionAssignment(b, 0);
-    }
-    else if (t == CONDITION_CORRECT) {
-      r = ConditionCorrect(b, 0);
-    }
-    else if (t == CONDITION_IN_CORRECT) {
-      r = ConditionInCorrect(b, 0);
-    }
-    else if (t == FUNC_NAME) {
-      r = FuncName(b, 0);
-    }
-    else if (t == FUNC_PTR) {
-      r = FuncPtr(b, 0);
-    }
-    else if (t == IDENTIFIER) {
-      r = Identifier(b, 0);
-    }
-    else if (t == INCLUDE_DEC) {
-      r = IncludeDec(b, 0);
-    }
-    else if (t == KEYWORD_FUNCTION) {
-      r = KeywordFunction(b, 0);
-    }
-    else if (t == NAME_LIST) {
-      r = NameList(b, 0);
-    }
-    else if (t == NATIVE_INS) {
-      r = NativeIns(b, 0);
-    }
-    else if (t == PATTERN) {
-      r = Pattern(b, 0);
-    }
-    else if (t == PATTERN_TERM) {
-      r = PatternTerm(b, 0);
-    }
-    else if (t == PROGRAM_ELEMENT) {
-      r = ProgramElement(b, 0);
-    }
-    else if (t == REDEFINITION_VARIABLE) {
-      r = RedefinitionVariable(b, 0);
-    }
-    else if (t == RESULT) {
-      r = Result(b, 0);
-    }
-    else if (t == RESULT_EX) {
-      r = ResultEx(b, 0);
-    }
-    else if (t == RESULT_TERM) {
-      r = ResultTerm(b, 0);
-    }
-    else if (t == SENTENCE) {
-      r = Sentence(b, 0);
-    }
-    else if (t == SENTENCES) {
-      r = Sentences(b, 0);
-    }
-    else if (t == SIMPLE_FUNCTION) {
-      r = SimpleFunction(b, 0);
-    }
-    else if (t == SUGER_CALL) {
-      r = SugerCall(b, 0);
-    }
-    else if (t == VAR) {
-      r = Var(b, 0);
-    }
-    else if (t == ENUM_DEFINITION) {
-      r = enumDefinition(b, 0);
-    }
-    else if (t == EXTERNAL_DECLARATION) {
-      r = externalDeclaration(b, 0);
-    }
-    else if (t == FORWARD_DECLARATION) {
-      r = forwardDeclaration(b, 0);
-    }
-    else if (t == PATTERN_RECOVER) {
-      r = patternRecover(b, 0);
-    }
-    else if (t == SWAP_DEFINITION) {
-      r = swapDefinition(b, 0);
+    if (t instanceof IFileElementType) {
+      r = parse_root_(t, b, 0);
     }
     else {
-      r = parse_root_(t, b, 0);
+      r = false;
     }
     exit_section_(b, 0, m, t, r, true, TRUE_CONDITION);
   }
@@ -407,11 +309,9 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   private static boolean KeywordFunction_0_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "KeywordFunction_0_0")) return false;
     boolean r;
-    Marker m = enter_section_(b);
     r = consumeToken(b, ENTRY);
     if (!r) r = consumeToken(b, INLINE);
     if (!r) r = consumeToken(b, DRIVE);
-    exit_section_(b, m, null, r);
     return r;
   }
 
@@ -440,11 +340,10 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   // (COMMA FuncName)*
   private static boolean KeywordFunction_2_1_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "KeywordFunction_2_1_0")) return false;
-    int c = current_position_(b);
     while (true) {
+      int c = current_position_(b);
       if (!KeywordFunction_2_1_0_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "KeywordFunction_2_1_0", c)) break;
-      c = current_position_(b);
     }
     return true;
   }
@@ -477,11 +376,10 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   // (COMMA NAME)*
   private static boolean NameList_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "NameList_1")) return false;
-    int c = current_position_(b);
     while (true) {
+      int c = current_position_(b);
       if (!NameList_1_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "NameList_1", c)) break;
-      c = current_position_(b);
     }
     return true;
   }
@@ -527,11 +425,10 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   public static boolean Pattern(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Pattern")) return false;
     Marker m = enter_section_(b, l, _NONE_, PATTERN, "<pattern>");
-    int c = current_position_(b);
     while (true) {
+      int c = current_position_(b);
       if (!PatternTerm(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "Pattern", c)) break;
-      c = current_position_(b);
     }
     exit_section_(b, l, m, true, false, null);
     return true;
@@ -542,7 +439,7 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   //     | patternTermParens
   //     | patternTermBrackets
   //     | RedefinitionVariable
-  //     //РґРѕР±Р°РІР»РµРЅРѕ
+  //     //добавлено
   //     | AssignmentCorrect
   //     | ConditionCorrect
   public static boolean PatternTerm(PsiBuilder b, int l) {
@@ -563,11 +460,10 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   // ProgramElement*
   static boolean Program(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Program")) return false;
-    int c = current_position_(b);
     while (true) {
+      int c = current_position_(b);
       if (!ProgramElement(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "Program", c)) break;
-      c = current_position_(b);
     }
     return true;
   }
@@ -583,6 +479,7 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   //  // | Comment
   //   | NativeIns
   //   |KeywordFunction
+  //   | SpecDirective
   //  // | Comment
   //   | SEMICOLON
   public static boolean ProgramElement(PsiBuilder b, int l) {
@@ -597,6 +494,7 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
     if (!r) r = SimpleFunction(b, l + 1);
     if (!r) r = NativeIns(b, l + 1);
     if (!r) r = KeywordFunction(b, l + 1);
+    if (!r) r = SpecDirective(b, l + 1);
     if (!r) r = consumeToken(b, SEMICOLON);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -637,11 +535,10 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   public static boolean Result(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Result")) return false;
     Marker m = enter_section_(b, l, _NONE_, RESULT, "<result>");
-    int c = current_position_(b);
     while (true) {
+      int c = current_position_(b);
       if (!ResultTerm(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "Result", c)) break;
-      c = current_position_(b);
     }
     exit_section_(b, l, m, true, false, null);
     return true;
@@ -662,11 +559,10 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   // (COLON Block)*
   private static boolean ResultEx_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "ResultEx_1")) return false;
-    int c = current_position_(b);
     while (true) {
+      int c = current_position_(b);
       if (!ResultEx_1_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "ResultEx_1", c)) break;
-      c = current_position_(b);
     }
     return true;
   }
@@ -756,11 +652,10 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   // (SEMICOLON  Sentence)*
   private static boolean Sentences_0_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "Sentences_0_1")) return false;
-    int c = current_position_(b);
     while (true) {
+      int c = current_position_(b);
       if (!Sentences_0_1_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "Sentences_0_1", c)) break;
-      c = current_position_(b);
     }
     return true;
   }
@@ -793,6 +688,20 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
     r = FuncName(b, l + 1);
     r = r && Block(b, l + 1);
     exit_section_(b, m, SIMPLE_FUNCTION, r);
+    return r;
+  }
+
+  /* ********************************************************** */
+  // SPEC FuncName Pattern
+  public static boolean SpecDirective(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "SpecDirective")) return false;
+    if (!nextTokenIs(b, SPEC)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, SPEC);
+    r = r && FuncName(b, l + 1);
+    r = r && Pattern(b, l + 1);
+    exit_section_(b, m, SPEC_DIRECTIVE, r);
     return r;
   }
 
@@ -846,10 +755,8 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   private static boolean enumDefinition_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "enumDefinition_0")) return false;
     boolean r;
-    Marker m = enter_section_(b);
     r = consumeToken(b, ENUM);
     if (!r) r = consumeToken(b, EENUM);
-    exit_section_(b, m, null, r);
     return r;
   }
 
@@ -869,11 +776,9 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   private static boolean externalDeclaration_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "externalDeclaration_0")) return false;
     boolean r;
-    Marker m = enter_section_(b);
     r = consumeToken(b, EXTERN);
     if (!r) r = consumeToken(b, EXTRN);
     if (!r) r = consumeToken(b, EXTERNALL);
-    exit_section_(b, m, null, r);
     return r;
   }
 
@@ -897,11 +802,10 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, PATTERN_RECOVER, "<pattern recover>");
     r = PatternTerm(b, l + 1);
-    int c = current_position_(b);
     while (r) {
+      int c = current_position_(b);
       if (!PatternTerm(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "patternRecover", c)) break;
-      c = current_position_(b);
     }
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -951,11 +855,10 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   // ConditionAssignment*
   private static boolean sentenceCorrect_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sentenceCorrect_1")) return false;
-    int c = current_position_(b);
     while (true) {
+      int c = current_position_(b);
       if (!ConditionAssignment(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "sentenceCorrect_1", c)) break;
-      c = current_position_(b);
     }
     return true;
   }
@@ -1016,10 +919,8 @@ public class RefalFiveLambdaParser implements PsiParser, LightPsiParser {
   private static boolean swapDefinition_0(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "swapDefinition_0")) return false;
     boolean r;
-    Marker m = enter_section_(b);
     r = consumeToken(b, SWAP);
     if (!r) r = consumeToken(b, ESWAP);
-    exit_section_(b, m, null, r);
     return r;
   }
 

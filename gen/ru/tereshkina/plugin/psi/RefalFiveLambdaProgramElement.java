@@ -20,6 +20,9 @@ public interface RefalFiveLambdaProgramElement extends PsiElement {
   RefalFiveLambdaSimpleFunction getSimpleFunction();
 
   @Nullable
+  RefalFiveLambdaSpecDirective getSpecDirective();
+
+  @Nullable
   RefalFiveLambdaEnumDefinition getEnumDefinition();
 
   @Nullable

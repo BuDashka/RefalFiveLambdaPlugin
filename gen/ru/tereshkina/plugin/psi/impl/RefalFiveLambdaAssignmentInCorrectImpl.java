@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaAssignmentInCorrectImpl extends ASTWrapperPsiElement implements RefalFiveLambdaAssignmentInCorrect {
 
-  public RefalFiveLambdaAssignmentInCorrectImpl(ASTNode node) {
+  public RefalFiveLambdaAssignmentInCorrectImpl(@NotNull ASTNode node) {
     super(node);
   }
 

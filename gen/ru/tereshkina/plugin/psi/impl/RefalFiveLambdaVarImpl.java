@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaVarImpl extends ASTWrapperPsiElement implements RefalFiveLambdaVar {
 
-  public RefalFiveLambdaVarImpl(ASTNode node) {
+  public RefalFiveLambdaVarImpl(@NotNull ASTNode node) {
     super(node);
   }
 

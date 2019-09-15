@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaCaretDefImpl extends ASTWrapperPsiElement implements RefalFiveLambdaCaretDef {
 
-  public RefalFiveLambdaCaretDefImpl(ASTNode node) {
+  public RefalFiveLambdaCaretDefImpl(@NotNull ASTNode node) {
     super(node);
   }
 

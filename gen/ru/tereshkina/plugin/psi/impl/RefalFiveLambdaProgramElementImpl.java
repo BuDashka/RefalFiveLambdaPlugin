@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaProgramElementImpl extends ASTWrapperPsiElement implements RefalFiveLambdaProgramElement {
 
-  public RefalFiveLambdaProgramElementImpl(ASTNode node) {
+  public RefalFiveLambdaProgramElementImpl(@NotNull ASTNode node) {
     super(node);
   }
 
@@ -48,6 +48,12 @@ public class RefalFiveLambdaProgramElementImpl extends ASTWrapperPsiElement impl
   @Nullable
   public RefalFiveLambdaSimpleFunction getSimpleFunction() {
     return findChildByClass(RefalFiveLambdaSimpleFunction.class);
+  }
+
+  @Override
+  @Nullable
+  public RefalFiveLambdaSpecDirective getSpecDirective() {
+    return findChildByClass(RefalFiveLambdaSpecDirective.class);
   }
 
   @Override

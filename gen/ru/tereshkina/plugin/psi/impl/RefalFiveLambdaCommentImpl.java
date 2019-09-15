@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaCommentImpl extends ASTWrapperPsiElement implements RefalFiveLambdaComment {
 
-  public RefalFiveLambdaCommentImpl(ASTNode node) {
+  public RefalFiveLambdaCommentImpl(@NotNull ASTNode node) {
     super(node);
   }
 

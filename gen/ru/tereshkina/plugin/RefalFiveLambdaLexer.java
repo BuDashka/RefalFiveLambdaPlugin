@@ -54,11 +54,11 @@ class RefalFiveLambdaLexer implements FlexLexer {
 
   /* The ZZ_CMAP_A table has 320 entries */
   static final char ZZ_CMAP_A[] = zzUnpackCMap(
-    "\11\0\1\3\1\1\1\14\1\15\1\2\22\0\1\3\1\0\1\20\1\51\1\26\1\13\1\52\1\16\1\60"+
-    "\1\61\1\12\1\67\1\53\1\70\1\72\1\11\12\25\1\55\1\54\1\64\1\65\1\21\1\71\1"+
-    "\0\1\35\1\24\1\40\1\42\1\27\1\47\2\4\1\37\2\4\1\41\1\32\1\30\1\50\1\36\1\4"+
-    "\1\45\1\33\1\44\1\31\1\4\1\34\1\43\1\46\1\4\1\62\1\17\1\63\1\66\1\5\1\0\4"+
-    "\24\1\10\1\24\7\4\1\22\3\4\1\22\1\6\1\7\3\4\1\23\2\4\1\56\1\0\1\57\7\0\1\14"+
+    "\11\0\1\3\1\1\1\14\1\15\1\2\22\0\1\3\1\0\1\20\1\52\1\26\1\13\1\53\1\16\1\61"+
+    "\1\62\1\12\1\70\1\54\1\71\1\73\1\11\12\25\1\56\1\55\1\65\1\66\1\21\1\72\1"+
+    "\0\1\35\1\24\1\40\1\42\1\27\1\50\2\4\1\37\2\4\1\41\1\32\1\30\1\51\1\36\1\4"+
+    "\1\45\1\33\1\44\1\31\1\47\1\34\1\43\1\46\1\4\1\63\1\17\1\64\1\67\1\5\1\0\4"+
+    "\24\1\10\1\24\7\4\1\22\3\4\1\22\1\6\1\7\3\4\1\23\2\4\1\57\1\0\1\60\7\0\1\14"+
     "\242\0\2\14\26\0");
 
   /** 
@@ -70,14 +70,14 @@ class RefalFiveLambdaLexer implements FlexLexer {
     "\2\0\1\1\1\2\2\3\1\1\1\4\3\1\1\5"+
     "\1\6\1\1\1\7\1\10\1\11\1\12\1\13\1\14"+
     "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24"+
-    "\1\0\1\25\2\0\1\26\3\0\1\27\4\0\1\30"+
-    "\1\31\1\32\1\33\1\34\1\35\1\36\1\25\31\0"+
-    "\1\25\1\37\1\0\1\40\4\0\1\41\3\0\1\42"+
-    "\1\43\1\44\1\0\1\45\3\0\1\46\1\0\1\47"+
-    "\2\0\1\50\1\51\1\52";
+    "\1\0\1\25\2\0\1\26\3\0\1\27\5\0\1\30"+
+    "\1\31\1\32\1\33\1\34\1\35\1\36\1\25\35\0"+
+    "\1\25\1\37\1\0\1\40\4\0\1\41\1\42\4\0"+
+    "\1\43\1\44\1\45\1\0\1\46\2\0\1\47\1\0"+
+    "\1\50\1\0\1\51\2\0\1\52\1\53\1\54";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[102];
+    int [] result = new int[110];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -102,22 +102,23 @@ class RefalFiveLambdaLexer implements FlexLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\73\0\73\0\166\0\261\0\354\0\u0127\0\u0162"+
-    "\0\u019d\0\u01d8\0\u0213\0\73\0\u024e\0\u0289\0\73\0\73"+
-    "\0\73\0\73\0\73\0\73\0\73\0\73\0\73\0\73"+
-    "\0\73\0\u02c4\0\73\0\73\0\u02ff\0\u033a\0\u0375\0\u01d8"+
-    "\0\73\0\u03b0\0\u0213\0\u03eb\0\73\0\u0426\0\u0461\0\u049c"+
-    "\0\u04d7\0\73\0\73\0\73\0\73\0\73\0\73\0\u02ff"+
-    "\0\u0512\0\u054d\0\u0588\0\u05c3\0\u05fe\0\u0639\0\u0674\0\u06af"+
-    "\0\u06ea\0\u0725\0\u0760\0\u079b\0\u07d6\0\u0811\0\u084c\0\u0887"+
-    "\0\u08c2\0\u08fd\0\u0938\0\u0973\0\u09ae\0\u09e9\0\u0a24\0\u0a5f"+
-    "\0\u0a9a\0\u0ad5\0\73\0\73\0\u0b10\0\73\0\u0b4b\0\u0b86"+
-    "\0\u0bc1\0\u0bfc\0\73\0\u0c37\0\u0c72\0\u0cad\0\73\0\73"+
-    "\0\73\0\u0ce8\0\73\0\u0d23\0\u0d5e\0\u0d99\0\u0dd4\0\u0e0f"+
-    "\0\73\0\u0e4a\0\u0e85\0\73\0\73\0\73";
+    "\0\0\0\74\0\74\0\170\0\264\0\360\0\u012c\0\u0168"+
+    "\0\u01a4\0\u01e0\0\u021c\0\74\0\u0258\0\u0294\0\74\0\74"+
+    "\0\74\0\74\0\74\0\74\0\74\0\74\0\74\0\74"+
+    "\0\74\0\u02d0\0\74\0\74\0\u030c\0\u0348\0\u0384\0\u01e0"+
+    "\0\74\0\u03c0\0\u021c\0\u03fc\0\74\0\u0438\0\u0474\0\u04b0"+
+    "\0\u04ec\0\u0528\0\74\0\74\0\74\0\74\0\74\0\74"+
+    "\0\u030c\0\u0564\0\u05a0\0\u05dc\0\u0618\0\u0654\0\u0690\0\u06cc"+
+    "\0\u0708\0\u0744\0\u0780\0\u07bc\0\u07f8\0\u0834\0\u0870\0\u08ac"+
+    "\0\u08e8\0\u0924\0\u0960\0\u099c\0\u09d8\0\u0a14\0\u0a50\0\u0a8c"+
+    "\0\u0ac8\0\u0b04\0\u0b40\0\u0b7c\0\u0bb8\0\u0bf4\0\u0c30\0\74"+
+    "\0\74\0\u0c6c\0\74\0\u0ca8\0\u0ce4\0\u0d20\0\u0d5c\0\74"+
+    "\0\74\0\u0d98\0\u0dd4\0\u0e10\0\u0e4c\0\74\0\74\0\74"+
+    "\0\u0e88\0\74\0\u0ec4\0\u0f00\0\74\0\u0f3c\0\u0f78\0\u0fb4"+
+    "\0\74\0\u0ff0\0\u102c\0\74\0\74\0\74";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[102];
+    int [] result = new int[110];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -142,44 +143,46 @@ class RefalFiveLambdaLexer implements FlexLexer {
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\3\3\4\1\5\1\3\3\6\1\7\1\10\1\11"+
     "\1\0\1\4\1\12\1\3\1\13\1\14\3\5\1\15"+
-    "\1\16\22\5\1\17\1\20\1\21\1\22\1\23\1\24"+
+    "\1\16\23\5\1\17\1\20\1\21\1\22\1\23\1\24"+
     "\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34"+
-    "\4\3\74\0\3\4\11\0\1\4\61\0\5\5\11\0"+
-    "\4\5\1\0\22\5\17\0\1\5\6\0\5\5\11\0"+
-    "\4\5\1\0\22\5\17\0\1\5\1\0\1\35\12\0"+
-    "\1\36\60\0\1\10\2\0\70\10\13\0\1\37\57\0"+
-    "\1\40\2\0\13\40\1\41\1\42\53\40\1\43\2\0"+
-    "\14\43\1\44\1\45\52\43\25\0\1\15\74\0\1\46"+
-    "\3\0\1\47\3\0\1\50\7\0\1\51\34\0\1\52"+
-    "\1\53\1\54\53\0\1\55\1\56\1\57\5\0\5\60"+
-    "\11\0\4\60\1\0\22\60\17\0\1\60\2\0\12\61"+
-    "\1\62\60\61\1\0\1\63\100\0\1\40\6\0\5\40"+
-    "\1\64\34\0\2\40\2\0\1\40\15\0\1\43\6\0"+
-    "\5\43\1\65\34\0\2\43\2\0\1\43\35\0\1\66"+
-    "\1\67\2\0\1\70\7\0\1\71\63\0\1\72\66\0"+
-    "\1\73\112\0\1\74\22\0\12\61\1\75\72\61\1\0"+
-    "\60\61\1\76\1\63\11\76\1\77\57\76\10\0\1\100"+
-    "\13\0\2\100\1\0\1\100\5\0\1\100\2\0\1\100"+
-    "\1\0\1\100\4\0\1\100\33\0\1\101\13\0\2\101"+
-    "\1\0\1\101\5\0\1\101\2\0\1\101\1\0\1\101"+
-    "\4\0\1\101\53\0\1\102\73\0\1\103\12\0\1\104"+
-    "\62\0\1\105\102\0\1\106\63\0\1\107\75\0\1\110"+
-    "\1\111\76\0\1\112\25\0\11\61\1\113\1\75\60\61"+
-    "\1\76\1\63\1\0\11\76\2\0\56\76\1\63\11\76"+
-    "\1\114\57\76\10\0\1\40\13\0\2\40\1\0\1\40"+
-    "\5\0\1\40\2\0\1\40\1\0\1\40\4\0\1\40"+
-    "\33\0\1\43\13\0\2\43\1\0\1\43\5\0\1\43"+
-    "\2\0\1\43\1\0\1\43\4\0\1\43\54\0\1\115"+
-    "\73\0\1\116\105\0\1\117\62\0\1\120\64\0\1\121"+
-    "\15\0\1\122\63\0\1\123\75\0\1\124\70\0\1\125"+
-    "\67\0\1\126\70\0\1\127\106\0\1\130\62\0\1\131"+
-    "\101\0\1\132\55\0\1\133\73\0\1\134\71\0\1\135"+
-    "\77\0\1\136\65\0\1\137\104\0\1\140\57\0\1\141"+
-    "\110\0\1\142\62\0\1\143\64\0\1\144\105\0\1\145"+
-    "\71\0\1\146\31\0";
+    "\4\3\75\0\3\4\11\0\1\4\62\0\5\5\11\0"+
+    "\4\5\1\0\23\5\17\0\1\5\6\0\5\5\11\0"+
+    "\4\5\1\0\23\5\17\0\1\5\1\0\1\35\12\0"+
+    "\1\36\61\0\1\10\2\0\71\10\13\0\1\37\60\0"+
+    "\1\40\2\0\13\40\1\41\1\42\54\40\1\43\2\0"+
+    "\14\43\1\44\1\45\53\43\25\0\1\15\75\0\1\46"+
+    "\3\0\1\47\3\0\1\50\2\0\1\51\5\0\1\52"+
+    "\34\0\1\53\1\54\1\55\54\0\1\56\1\57\1\60"+
+    "\5\0\5\61\11\0\4\61\1\0\23\61\17\0\1\61"+
+    "\2\0\12\62\1\63\61\62\1\0\1\64\101\0\1\40"+
+    "\6\0\5\40\1\65\35\0\2\40\2\0\1\40\15\0"+
+    "\1\43\6\0\5\43\1\66\35\0\2\43\2\0\1\43"+
+    "\35\0\1\67\1\70\2\0\1\71\7\0\1\72\64\0"+
+    "\1\73\1\0\1\74\65\0\1\75\110\0\1\76\77\0"+
+    "\1\77\22\0\12\62\1\100\73\62\1\0\61\62\1\101"+
+    "\1\64\11\101\1\102\60\101\10\0\1\103\13\0\2\103"+
+    "\1\0\1\103\5\0\1\103\2\0\1\103\1\0\1\103"+
+    "\5\0\1\103\33\0\1\104\13\0\2\104\1\0\1\104"+
+    "\5\0\1\104\2\0\1\104\1\0\1\104\5\0\1\104"+
+    "\53\0\1\105\74\0\1\106\12\0\1\107\63\0\1\110"+
+    "\103\0\1\111\64\0\1\112\65\0\1\113\104\0\1\114"+
+    "\1\115\71\0\1\116\101\0\1\117\26\0\11\62\1\120"+
+    "\1\100\61\62\1\101\1\64\1\0\11\101\2\0\57\101"+
+    "\1\64\11\101\1\121\60\101\10\0\1\40\13\0\2\40"+
+    "\1\0\1\40\5\0\1\40\2\0\1\40\1\0\1\40"+
+    "\5\0\1\40\33\0\1\43\13\0\2\43\1\0\1\43"+
+    "\5\0\1\43\2\0\1\43\1\0\1\43\5\0\1\43"+
+    "\54\0\1\122\74\0\1\123\106\0\1\124\63\0\1\125"+
+    "\65\0\1\126\15\0\1\127\64\0\1\130\75\0\1\131"+
+    "\74\0\1\132\71\0\1\133\103\0\1\134\60\0\1\135"+
+    "\71\0\1\136\107\0\1\137\63\0\1\140\102\0\1\141"+
+    "\56\0\1\142\74\0\1\143\72\0\1\144\72\0\1\145"+
+    "\101\0\1\146\66\0\1\147\105\0\1\150\60\0\1\151"+
+    "\111\0\1\152\63\0\1\153\65\0\1\154\106\0\1\155"+
+    "\72\0\1\156\32\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[3776];
+    int [] result = new int[4200];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -218,13 +221,13 @@ class RefalFiveLambdaLexer implements FlexLexer {
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
     "\1\0\1\10\1\11\10\1\1\11\2\1\13\11\1\1"+
-    "\2\11\1\0\1\1\2\0\1\11\3\0\1\11\4\0"+
-    "\6\11\2\1\31\0\2\11\1\0\1\11\4\0\1\11"+
-    "\3\0\3\11\1\0\1\11\3\0\1\1\1\0\1\11"+
-    "\2\0\3\11";
+    "\2\11\1\0\1\1\2\0\1\11\3\0\1\11\5\0"+
+    "\6\11\2\1\35\0\2\11\1\0\1\11\4\0\2\11"+
+    "\4\0\3\11\1\0\1\11\2\0\1\11\1\0\1\1"+
+    "\1\0\1\11\2\0\3\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[102];
+    int [] result = new int[110];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -392,7 +395,7 @@ class RefalFiveLambdaLexer implements FlexLexer {
 
 
   /**
-   * Reports an error that occured while scanning.
+   * Reports an error that occurred while scanning.
    *
    * In a wellformed scanner (no or only correct usage of
    * yypushback(int) and a match-all fallback rule) this method
@@ -541,212 +544,222 @@ class RefalFiveLambdaLexer implements FlexLexer {
             { yybegin(YYINITIAL); return TokenType.BAD_CHARACTER;
             } 
             // fall through
-          case 43: break;
+          case 45: break;
           case 2: 
             { return TokenType.WHITE_SPACE;
             } 
             // fall through
-          case 44: break;
+          case 46: break;
           case 3: 
             { return RefalFiveLambdaTypes.NAME;
             } 
             // fall through
-          case 45: break;
+          case 47: break;
           case 4: 
             { return RefalFiveLambdaTypes.LINE_COMMENT;
             } 
             // fall through
-          case 46: break;
+          case 48: break;
           case 5: 
             { return RefalFiveLambdaTypes.RCHEVRON;
             } 
             // fall through
-          case 47: break;
+          case 49: break;
           case 6: 
             { return RefalFiveLambdaTypes.INTEGER_LITERAL;
             } 
             // fall through
-          case 48: break;
+          case 50: break;
           case 7: 
             { return RefalFiveLambdaTypes.SHARP;
             } 
             // fall through
-          case 49: break;
+          case 51: break;
           case 8: 
             { return RefalFiveLambdaTypes.AMPERSAND;
             } 
             // fall through
-          case 50: break;
+          case 52: break;
           case 9: 
             { return RefalFiveLambdaTypes.COMMA;
             } 
             // fall through
-          case 51: break;
+          case 53: break;
           case 10: 
             { return RefalFiveLambdaTypes.SEMICOLON;
             } 
             // fall through
-          case 52: break;
+          case 54: break;
           case 11: 
             { return RefalFiveLambdaTypes.COLON;
             } 
             // fall through
-          case 53: break;
+          case 55: break;
           case 12: 
             { return RefalFiveLambdaTypes.LBRACE;
             } 
             // fall through
-          case 54: break;
+          case 56: break;
           case 13: 
             { return RefalFiveLambdaTypes.RBRACE;
             } 
             // fall through
-          case 55: break;
+          case 57: break;
           case 14: 
             { return RefalFiveLambdaTypes.LPAREN;
             } 
             // fall through
-          case 56: break;
+          case 58: break;
           case 15: 
             { return RefalFiveLambdaTypes.RPAREN;
             } 
             // fall through
-          case 57: break;
+          case 59: break;
           case 16: 
             { return RefalFiveLambdaTypes.LBRACKET;
             } 
             // fall through
-          case 58: break;
+          case 60: break;
           case 17: 
             { return RefalFiveLambdaTypes.RBRACKET;
             } 
             // fall through
-          case 59: break;
+          case 61: break;
           case 18: 
             { return RefalFiveLambdaTypes.LCHEVRON;
             } 
             // fall through
-          case 60: break;
+          case 62: break;
           case 19: 
             { return RefalFiveLambdaTypes.EQUAL;
             } 
             // fall through
-          case 61: break;
+          case 63: break;
           case 20: 
             { return RefalFiveLambdaTypes.CARET;
             } 
             // fall through
-          case 62: break;
+          case 64: break;
           case 21: 
             { return RefalFiveLambdaTypes.MULTILINE_COMMENT;
             } 
             // fall through
-          case 63: break;
+          case 65: break;
           case 22: 
             { return RefalFiveLambdaTypes.QUOTEDSTRING;
             } 
             // fall through
-          case 64: break;
+          case 66: break;
           case 23: 
             { return RefalFiveLambdaTypes.COMPOUND;
             } 
             // fall through
-          case 65: break;
+          case 67: break;
           case 24: 
             { return RefalFiveLambdaTypes.DIV;
             } 
             // fall through
-          case 66: break;
+          case 68: break;
           case 25: 
             { return RefalFiveLambdaTypes.MUL;
             } 
             // fall through
-          case 67: break;
+          case 69: break;
           case 26: 
             { return RefalFiveLambdaTypes.MOD;
             } 
             // fall through
-          case 68: break;
+          case 70: break;
           case 27: 
             { return RefalFiveLambdaTypes.ADD;
             } 
             // fall through
-          case 69: break;
+          case 71: break;
           case 28: 
             { return RefalFiveLambdaTypes.SUB;
             } 
             // fall through
-          case 70: break;
+          case 72: break;
           case 29: 
             { return RefalFiveLambdaTypes.RESIDUE;
             } 
             // fall through
-          case 71: break;
+          case 73: break;
           case 30: 
             { return RefalFiveLambdaTypes.VARIABLE;
             } 
             // fall through
-          case 72: break;
+          case 74: break;
           case 31: 
             { return RefalFiveLambdaTypes.NATIVE_IN;
             } 
             // fall through
-          case 73: break;
+          case 75: break;
           case 32: 
             { return RefalFiveLambdaTypes.ENUM;
             } 
             // fall through
-          case 74: break;
+          case 76: break;
           case 33: 
             { return RefalFiveLambdaTypes.SWAP;
             } 
             // fall through
-          case 75: break;
-          case 34: 
-            { return RefalFiveLambdaTypes.EENUM;
-            } 
-            // fall through
-          case 76: break;
-          case 35: 
-            { return RefalFiveLambdaTypes.ENTRY;
-            } 
-            // fall through
           case 77: break;
-          case 36: 
-            { return RefalFiveLambdaTypes.ESWAP;
+          case 34: 
+            { return RefalFiveLambdaTypes.SPEC;
             } 
             // fall through
           case 78: break;
-          case 37: 
-            { return RefalFiveLambdaTypes.EXTRN;
+          case 35: 
+            { return RefalFiveLambdaTypes.EENUM;
             } 
             // fall through
           case 79: break;
-          case 38: 
-            { return RefalFiveLambdaTypes.EXTERN;
+          case 36: 
+            { return RefalFiveLambdaTypes.ENTRY;
             } 
             // fall through
           case 80: break;
-          case 39: 
-            { return RefalFiveLambdaTypes.INLINE;
+          case 37: 
+            { return RefalFiveLambdaTypes.ESWAP;
             } 
             // fall through
           case 81: break;
-          case 40: 
-            { return RefalFiveLambdaTypes.INCLUDE;
+          case 38: 
+            { return RefalFiveLambdaTypes.EXTRN;
             } 
             // fall through
           case 82: break;
-          case 41: 
-            { return RefalFiveLambdaTypes.FORWARD;
+          case 39: 
+            { return RefalFiveLambdaTypes.DRIVE;
             } 
             // fall through
           case 83: break;
-          case 42: 
-            { return RefalFiveLambdaTypes.EXTERNALL;
+          case 40: 
+            { return RefalFiveLambdaTypes.EXTERN;
             } 
             // fall through
           case 84: break;
+          case 41: 
+            { return RefalFiveLambdaTypes.INLINE;
+            } 
+            // fall through
+          case 85: break;
+          case 42: 
+            { return RefalFiveLambdaTypes.INCLUDE;
+            } 
+            // fall through
+          case 86: break;
+          case 43: 
+            { return RefalFiveLambdaTypes.FORWARD;
+            } 
+            // fall through
+          case 87: break;
+          case 44: 
+            { return RefalFiveLambdaTypes.EXTERNALL;
+            } 
+            // fall through
+          case 88: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }

@@ -1,8 +1,8 @@
 <idea-plugin version="2">
-  <id>ru.tereshkina.plugin.RefalFiveambda</id>
-  <name>Plugin Refal 5 Lambda</name>
-  <version>1.3</version>
-  <description>Plugin Refal 5 Lambda </description>
+  <id>ru.tereshkina.plugin.RefalFiveLambda</id>
+  <name>Plugin Refal-5λ</name>
+  <version>1.0.4</version>
+  <description>Plugin Refal-5λ</description>
 
   <depends>com.intellij.modules.lang</depends>
 

@@ -11,14 +11,14 @@ import static ru.tereshkina.plugin.psi.RefalFiveLambdaTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import ru.tereshkina.plugin.psi.*;
 
-public class RefalFiveLambdaConditionAssignmentImpl extends ASTWrapperPsiElement implements RefalFiveLambdaConditionAssignment {
+public class RefalFiveLambdaSpecDirectiveImpl extends ASTWrapperPsiElement implements RefalFiveLambdaSpecDirective {
 
-  public RefalFiveLambdaConditionAssignmentImpl(@NotNull ASTNode node) {
+  public RefalFiveLambdaSpecDirectiveImpl(@NotNull ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull RefalFiveLambdaVisitor visitor) {
-    visitor.visitConditionAssignment(this);
+    visitor.visitSpecDirective(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
@@ -27,15 +27,15 @@ public class RefalFiveLambdaConditionAssignmentImpl extends ASTWrapperPsiElement
   }
 
   @Override
-  @Nullable
-  public RefalFiveLambdaAssignmentInCorrect getAssignmentInCorrect() {
-    return findChildByClass(RefalFiveLambdaAssignmentInCorrect.class);
+  @NotNull
+  public RefalFiveLambdaFuncName getFuncName() {
+    return findNotNullChildByClass(RefalFiveLambdaFuncName.class);
   }
 
   @Override
-  @Nullable
-  public RefalFiveLambdaConditionInCorrect getConditionInCorrect() {
-    return findChildByClass(RefalFiveLambdaConditionInCorrect.class);
+  @NotNull
+  public RefalFiveLambdaPattern getPattern() {
+    return findNotNullChildByClass(RefalFiveLambdaPattern.class);
   }
 
 }

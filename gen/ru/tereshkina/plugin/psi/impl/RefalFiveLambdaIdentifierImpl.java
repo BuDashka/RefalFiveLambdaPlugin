@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaIdentifierImpl extends ASTWrapperPsiElement implements RefalFiveLambdaIdentifier {
 
-  public RefalFiveLambdaIdentifierImpl(ASTNode node) {
+  public RefalFiveLambdaIdentifierImpl(@NotNull ASTNode node) {
     super(node);
   }
 

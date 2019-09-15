@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaSugerCallImpl extends ASTWrapperPsiElement implements RefalFiveLambdaSugerCall {
 
-  public RefalFiveLambdaSugerCallImpl(ASTNode node) {
+  public RefalFiveLambdaSugerCallImpl(@NotNull ASTNode node) {
     super(node);
   }
 

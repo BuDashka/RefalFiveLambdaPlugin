@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaKeywordFunctionImpl extends ASTWrapperPsiElement implements RefalFiveLambdaKeywordFunction {
 
-  public RefalFiveLambdaKeywordFunctionImpl(ASTNode node) {
+  public RefalFiveLambdaKeywordFunctionImpl(@NotNull ASTNode node) {
     super(node);
   }
 

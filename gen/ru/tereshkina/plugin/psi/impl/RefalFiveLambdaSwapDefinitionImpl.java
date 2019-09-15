@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaSwapDefinitionImpl extends ASTWrapperPsiElement implements RefalFiveLambdaSwapDefinition {
 
-  public RefalFiveLambdaSwapDefinitionImpl(ASTNode node) {
+  public RefalFiveLambdaSwapDefinitionImpl(@NotNull ASTNode node) {
     super(node);
   }
 

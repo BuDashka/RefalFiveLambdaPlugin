@@ -25,6 +25,7 @@ ProgramElement ::=
  // | Comment
   | NativeIns
   |KeywordFunction
+  | SpecDirective
  // | Comment
   | SEMICOLON
 
@@ -42,6 +43,7 @@ Comment ::= //CPP_INLINE
            // | END_OF_LINE_COMMENT
             | LINE_COMMENT
 KeywordFunction ::= (ENTRY | INLINE | DRIVE )? FuncName (Block | (COMMA FuncName)* SEMICOLON)
+SpecDirective ::= SPEC FuncName Pattern;
 SimpleFunction ::= FuncName Block
 //Function ::= (ENTRY | INLINE | SPEC )? FuncName Block
 //Block ::= LBRACE Sentences? RBRACE

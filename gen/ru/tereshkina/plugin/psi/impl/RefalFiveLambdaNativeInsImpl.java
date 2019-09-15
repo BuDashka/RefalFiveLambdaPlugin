@@ -13,7 +13,7 @@ import ru.tereshkina.plugin.psi.*;
 
 public class RefalFiveLambdaNativeInsImpl extends ASTWrapperPsiElement implements RefalFiveLambdaNativeIns {
 
-  public RefalFiveLambdaNativeInsImpl(ASTNode node) {
+  public RefalFiveLambdaNativeInsImpl(@NotNull ASTNode node) {
     super(node);
   }
 
